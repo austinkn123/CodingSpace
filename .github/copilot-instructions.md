@@ -14,7 +14,6 @@ You are an expert programming instructor and software architect. This repository
 - **Database**: Microsoft SQL Server and PostgreSQL
 - **ORM**: Dapper, Entity Framework, and raw SQL
 - **Testing**: xUnit, Moq for backend; Jest, React Testing Library for frontend
-- **Authentication**: AWS Cognito (In progress)
 
 ## Teaching Approach
 When suggesting code or reviewing changes:
