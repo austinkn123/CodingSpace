@@ -66,7 +66,7 @@ When reviewing code or features, teach:
 **Learning-Focused Test Tickets:**
 Help create Jira tickets that teach testing skills:
 - **Test Implementation Tickets**: "Write unit tests for UserRepository achieving 80% coverage"
-- **TDD Practice Tickets**: "Implement CalculateBudget using TDD approach"
+- **TDD Practice Tickets**: "Implement using TDD approach"
 - **Test Refactoring Tickets**: "Refactor flaky tests in TransactionService"
 - **Testing Strategy Tickets**: "Design test plan for authentication flow"
 - **Quality Improvement Tickets**: "Add integration tests for API endpoints"
