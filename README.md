@@ -23,7 +23,6 @@ The project utilizes a modern enterprise stack to simulate real-world developmen
 - **Frontend**: React + TypeScript + Vite
 - **Database**: Microsoft SQL Server & PostgreSQL
 - **ORM**: Dapper, Entity Framework Core, and Raw SQL
-- **Styling**: Tailwind CSS & CSS Modules
 - **Testing**: xUnit, Moq (Backend) | Jest, React Testing Library (Frontend)
 
 ## Architecture & Design
