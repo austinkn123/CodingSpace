@@ -36,6 +36,14 @@ CodingSpace explores various architectural patterns and design principles to bui
 
 ## Repository Structure
 
-- `.github/agents/`: Definitions for AI mentor personas.
-- `.github/agents/skills/`: Capability guides for agents (Code Review, Test Strategy, etc.).
+- **.github/agents/**: Definitions for AI mentor personas.
+- **.github/agents/skills/**: Capability guides for agents (Code Review, Test Strategy, etc.).
+- **src/**: Main source code for the platform.
+  - **CodingSpace.Shared**: Cross-cutting concerns (Result<T>, Constants).
+  - **CodingSpace.Core**: Business logic & Domain interfaces (EventBus).
+  - **CodingSpace.Infrastructure**: Concrete implementations (SQL, External APIs).
+  - **CodingSpace.API**: Entry point (ASP.NET Core).
+- **tests/**: Automated test projects.
+  - **CodingSpace.Shared.Tests**: Unit tests for shared components.
+  - **CodingSpace.Core.Tests**: Unit tests for core business logic.
 
