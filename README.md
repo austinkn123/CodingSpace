@@ -11,7 +11,7 @@ The primary goal of CodingSpace is to teach architectural thinking and professio
 This environment features a suite of specialized AI personas located in [.github/agents/](.github/agents/), each providing targeted guidance:
 
 - **Tony-Architect**: Focuses on system design, architectural patterns, and high-level decision making.
-- **Junior-Product-Manager**: Manages the learning roadmap, defines skill-building objectives, and structures Jira-style tasks.
+- **Christopher-Product-Manager**: Manages the learning roadmap, defines skill-building objectives, and structures Jira-style tasks.
 - **Paulie-Senior-Developer**: Provides technical execution guidance, code style mentorship, and implementation best practices.
 - **Silvio-QA**: Teaches testing strategies, TDD, and quality engineering.
 
@@ -43,7 +43,24 @@ CodingSpace explores various architectural patterns and design principles to bui
   - **CodingSpace.Core**: Business logic & Domain interfaces (EventBus).
   - **CodingSpace.Infrastructure**: Concrete implementations (SQL, External APIs).
   - **CodingSpace.API**: Entry point (ASP.NET Core).
+  - **CodingSpace.Lab**: A playground for CLI-based exercises, pattern experimentation, and rapid prototyping.
 - **tests/**: Automated test projects.
   - **CodingSpace.Shared.Tests**: Unit tests for shared components.
   - **CodingSpace.Core.Tests**: Unit tests for core business logic.
+
+## Getting Started
+
+### Backend
+Navigate to the API project and run the application:
+```bash
+cd src/CodingSpace.API
+dotnet run
+```
+
+### Lab
+Navigate to the Lab project and run the CLI playground:
+```bash
+cd src/CodingSpace.Lab
+dotnet runn
+```
 

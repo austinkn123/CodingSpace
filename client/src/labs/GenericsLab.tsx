@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
  * CONCEPT: Generics in TypeScript & React
@@ -7,6 +7,11 @@ import React from 'react';
  * In TypeScript, we do the exact same thing to ensure type safety 
  * without duplicating code.
  */
+
+interface LabResponse<T> {
+  data: T;
+  labType: string;
+}
 
 // 1. Generic Interface
 interface BoxProps<T> {
@@ -41,11 +46,31 @@ function DisplayEntity<T extends Identifiable>({ entity }: { entity: T }) {
 }
 
 const GenericsLab: React.FC = () => {
+  const [backendMessage, setBackendMessage] = useState<string>("Waiting for C#...");
   const user = { id: 'u1', name: 'Tony (Architect)', role: 'Senior Mentor' };
+
+  useEffect(() => {
+    // CONCEPT: Integrating the Bridge (API)
+    // We fetch from our C# Backend running on port 5283
+    fetch('http://localhost:5283/api/generics/info')
+      .then(res => res.json())
+      .then((data: LabResponse<string>) => {
+        setBackendMessage(data.data);
+      })
+      .catch(err => {
+        console.error("API Error:", err);
+        setBackendMessage("Error: Is the API running?");
+      });
+  }, []);
 
   return (
     <div style={{ padding: '20px' }}>
       <h1>React Generics Playground</h1>
+
+      <section style={{ backgroundColor: '#eef', color: '#333' }}>
+        <h2>0. The Backend Bridge (API)</h2>
+        <p><b>Message from C# Generic Endpoint:</b> {backendMessage}</p>
+      </section>
       
       <section>
         <h2>1. Generic Containers (The "Box" Pattern)</h2>

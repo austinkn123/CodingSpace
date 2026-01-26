@@ -20,7 +20,7 @@ public static class GenericPlayground
 
         Console.WriteLine("\n--- 3. Generic Classes ---");
         // We can create a container that holds ANY type
-        var numberBox = new Box<int>(100);
+        var numberBox = new Box<int>(200);
         var stringBox = new Box<string>("Fragile");
 
         Console.WriteLine($"Number Box: {numberBox.Content}");
