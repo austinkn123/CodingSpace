@@ -53,26 +53,19 @@ public static class GenericPlayground
 }
 
 // A class that can hold anything
-public class Box<T>
+public class Box<T>(T content)
 {
-    public T Content { get; }
-
-    public Box(T content)
-    {
-        Content = content;
-    }
+    public T Content { get; } = content;
 }
 
-public class User
+public class User(string name)
 {
-    public string Name { get; }
-    public User(string name) => Name = name;
+    public string Name { get; } = name;
 }
 
 // Architectural Constraint: Only classes allowed!
 // This stops us from putting types like 'int' or 'bool' into this store.
-public class DataStore<T> where T : class
+public class DataStore<T>(T item) where T : class
 {
-    public T Item { get; }
-    public DataStore(T item) => Item = item;
+    public T Item { get; } = item;
 }
