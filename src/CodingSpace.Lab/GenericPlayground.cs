@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace CodingSpace.Lab;
 
 public static class GenericPlayground
