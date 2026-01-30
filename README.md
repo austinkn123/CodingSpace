@@ -1,66 +1,71 @@
 # CodingSpace
 
-CodingSpace is a deliberate practice environment designed to evolve software engineering skills from intermediate to senior and architect levels. This repository serves as a hands-on laboratory for mastering architectural principles, design patterns, and modern development workflows through the development of production-grade applications.
+A **deliberate practice environment** for developing software engineering skills from intermediate to senior and architect levels. Learn by doing—master patterns, principles, and architectural thinking through hands-on implementation.
 
 ## Mission
 
-The primary goal of CodingSpace is to teach architectural thinking and professional engineering standards through consistent, guided practice. It moves beyond "making it work" to "designing it right," focusing on the *why* behind every technical decision.
+Move beyond "making it work" to **"designing it right"**. Every exercise focuses on the *why* behind technical decisions, building intuition for real-world engineering challenges.
 
 ## AI Mentorship Ecosystem
 
-This environment features a suite of specialized AI personas located in [.github/agents/](.github/agents/), each providing targeted guidance:
+Specialized AI mentors in [.github/agents/](.github/agents/) provide targeted guidance:
 
-- **Tony-Architect**: Focuses on system design, architectural patterns, and high-level decision making.
-- **Christopher-Product-Manager**: Manages the learning roadmap, defines skill-building objectives, and structures Jira-style tasks.
-- **Paulie-Senior-Developer**: Provides technical execution guidance, code style mentorship, and implementation best practices.
-- **Silvio-QA**: Teaches testing strategies, TDD, and quality engineering.
+| Agent | Role |
+|-------|------|
+| **Tony-Architect** | System design, architectural patterns, decision-making |
+| **Christopher-Product-Manager** | Learning roadmap, skill-building objectives, Jira tickets |
+| **Paulie-Senior-Developer** | Technical execution, clean code, .NET/React best practices |
+| **Silvio-QA** | Testing strategies, TDD, quality engineering |
+| **Bobby-documentation-specialist** | README files and project documentation |
 
 ## Tech Stack
 
-The project utilizes a modern enterprise stack to simulate real-world development scenarios:
-
-- **Backend**: .NET / ASP.NET Core Web API
+- **Backend**: Latest .NET / ASP.NET Core Web API
 - **Frontend**: React + TypeScript + Vite
-- **Database**: Microsoft SQL Server & PostgreSQL
-- **ORM**: Dapper, Entity Framework Core, and Raw SQL
+- **Database**: Microsoft SQL Server, PostgreSQL
+- **ORM**: Dapper, Entity Framework Core, Raw SQL
 - **Testing**: xUnit, Moq (Backend) | Jest, React Testing Library (Frontend)
-
-## Architecture & Design
-
-CodingSpace explores various architectural patterns and design principles to build robust, maintainable systems. Rather than adhering to a single strict methodology, the project focuses on:
-
-- **Separation of Concerns**: Ensuring distinct project layers have clear responsibilities.
-- **Maintainability**: Writing code that is easy to understand, test, and evolve.
-- **Pattern Recognition**: Identifying and applying the right design patterns for the specific problem at hand (e.g., Repository, CQRS, Hexagonal, etc.).
-- **Decision Logic**: Documenting the trade-offs involved in choosing one approach over another.
 
 ## Repository Structure
 
-- **.github/agents/**: Definitions for AI mentor personas.
-- **.github/agents/skills/**: Capability guides for agents (Code Review, Test Strategy, etc.).
-- **src/**: Main source code for the platform.
-  - **CodingSpace.Shared**: Cross-cutting concerns (Result<T>, Constants).
-  - **CodingSpace.Core**: Business logic & Domain interfaces (EventBus).
-  - **CodingSpace.Infrastructure**: Concrete implementations (SQL, External APIs).
-  - **CodingSpace.API**: Entry point (ASP.NET Core).
-  - **CodingSpace.Lab**: A playground for CLI-based exercises, pattern experimentation, and rapid prototyping.
-- **tests/**: Automated test projects.
-  - **CodingSpace.Shared.Tests**: Unit tests for shared components.
-  - **CodingSpace.Core.Tests**: Unit tests for core business logic.
+```
+CodingSpace/
+├── docs/                          # Learning documentation
+│   ├── roadmap.md                 # Skill progression map
+│   ├── decisions/                 # Architecture Decision Records
+│   └── concepts/                  # Concept deep-dives
+│
+├── labs/                          # Isolated learning exercises
+│   ├── 01-fundamentals/           # Generics, Async, LINQ
+│   ├── 02-patterns/               # Result, Repository, Factory
+│   ├── 03-architecture/           # DI, CQRS, Clean Architecture
+│   └── 04-advanced/               # Event-Driven, Distributed Systems
+│
+├── projects/                      # Capstone mini-projects
+│
+├── src/                           # Application code
+│   ├── CodingSpace.API/           # ASP.NET Core Web API
+│   └── CodingSpace.Lab/           # CLI playground for exercises
+│
+├── tests/                         # Automated tests
+```
 
 ## Getting Started
 
-### Backend
-Navigate to the API project and run the application:
+### Run the API
 ```bash
 cd src/CodingSpace.API
 dotnet run
 ```
 
-### Lab
-Navigate to the Lab project and run the CLI playground:
+### Run the Lab CLI
 ```bash
 cd src/CodingSpace.Lab
-dotnet runn
+dotnet run
 ```
 
+### Start Learning
+1. Open [docs/roadmap.md](docs/roadmap.md)
+2. Navigate to your current topic in `labs/`
+3. Read the README, then implement the exercises
+4. Ask an AI mentor for review when done

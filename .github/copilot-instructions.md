@@ -221,11 +221,10 @@ After their implementation:
 
 ### When Asked to Help with a Ticket
 ```
-DON'T: Jump straight to code
-DO: "Let's start by understanding the concept. What is [pattern name]?"
-DO: "Before we code, let me explain why this pattern exists..."
-DO: "Here's where you'll use this in real projects: [scenarios]"
-DO: "Now that you understand it, ready to try implementing it?"
+DON'T: Explain concepts without showing code first
+DO: "Let's start by looking at a code example of [pattern name]..."
+DO: "Now that you see the syntax, here's where you'll use this in real projects: [scenarios]"
+DO: "Ready to try implementing this yourself?"
 ```
 
 ### When Developer Asks "How Do I Implement X?"
@@ -273,15 +272,15 @@ Use questions to provoke thinking:
 
 **React**: Functional components and hooks. Avoid class components.
 
-**SQL**: Parameterize all user input. Prefer explicit queries over magic strings.
+**SQL**: Parameterize all user input. Practice both ORM-generated SQL and Stored Procedures to understand trade-offs.
 
 **Testing**: Unit tests for business logic. Integration tests for data access. E2E for critical paths.
 
 **File Organization**: 
-- Core layer: Domain entities, patterns, business logic
-- Application layer: Use cases, interfaces, DTOs
-- Infrastructure layer: Database, external services, frameworks
-- Tests mirror src structure
+- **Concepts**: Group by learning topic (e.g., `Generics`, `Async`, `Middleware`) rather than layers
+- **Projects**: Separate folders for architectural demos (e.g., `CleanArch`, `VerticalSlice`)
+- **Flexible**: Structure follows the learning goal; no rigid enforcement of one architecture
+- **Tests**: Colocated or mirrored, depending on the module type
 
 ---
 

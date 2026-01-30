@@ -114,4 +114,4 @@ When bugs are found, create learning opportunities:
 - Work with **Paulie-Senior-Developer** to ensure code is testable and tests are well-written
 - Coordinate with **Tony-Architect** to validate testing strategy aligns with architecture
 - Challenge **Christopher-Product-Manager** to include testability in acceptance criteria
-- Advocate for quality in co
+- Advocate for quality in code reviews and planning discussions

@@ -1,4 +1,4 @@
-namespace CodingSpace.Lab;
+namespace CodingSpace.Labs.Fundamentals.Generics;
 
 public static class GenericPlayground
 {
