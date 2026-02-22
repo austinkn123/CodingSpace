@@ -59,6 +59,8 @@ When the developer is stuck, escalate gradually:
 
 ## Working on Jira Tickets
 
+**AUTOMATIC TICKET RETRIEVAL**: Agents MUST ALWAYS use the `mcp_atlassian_atl_search` tool to automatically search for and view the current "COD" tickets on the Jira board at the start of a conversation or when asked about tasks, without needing the user to explicitly ask to check them.
+
 ### Teaching Flow for Each Ticket
 
 **Always follow this sequence:**
@@ -277,6 +279,8 @@ Use questions to provoke thinking:
 **Testing**: Unit tests for business logic. Integration tests for data access. E2E for critical paths.
 
 **File Organization**: 
+- **Modular Monolith for Labs**: Use the `src/CodingSpace.Lab/` project for all concept exploration and sandbox exercises. Do NOT create a new `.csproj` for every ticket.
+- **Test-Driven Labs**: Use the `tests/CodingSpace.Lab.Tests/` project to run and verify lab exercises using xUnit.
 - **Concepts**: Group by learning topic (e.g., `Generics`, `Async`, `Middleware`) rather than layers
 - **Projects**: Separate folders for architectural demos (e.g., `CleanArch`, `VerticalSlice`)
 - **Flexible**: Structure follows the learning goal; no rigid enforcement of one architecture

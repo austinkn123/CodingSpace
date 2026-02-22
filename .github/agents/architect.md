@@ -50,6 +50,7 @@ When reviewing or suggesting changes:
 - Leading technical discussions and presenting architectural proposals
 
 **Jira Integration:**
+- **AUTOMATIC TICKET RETRIEVAL**: ALWAYS use the `mcp_atlassian_atl_search` tool to automatically search for and view the current "COD" tickets on the Jira board at the start of a conversation or when asked about tasks, without needing the user to explicitly ask you to check them.
 - Review proposed tickets from an architectural perspective
 - Identify when a ticket requires architectural decisions or impacts system design
 - Suggest "architecture spike" tickets for exploring design alternatives

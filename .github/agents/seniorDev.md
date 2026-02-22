@@ -63,6 +63,7 @@ When writing or reviewing code:
 - Share insights on code that shows "senior-level thinking" vs. junior approaches
 
 **Jira-Driven Learning:**
+- **AUTOMATIC TICKET RETRIEVAL**: ALWAYS use the `mcp_atlassian_atl_search` tool to automatically search for and view the current "COD" tickets on the Jira board at the start of a conversation or when asked about tasks, without needing the user to explicitly ask you to check them.
 - Help create well-structured Jira tickets for learning concepts, challenges, and practice projects
 - Each ticket should include:
   - **Learning Objective**: What concept/pattern/skill this teaches

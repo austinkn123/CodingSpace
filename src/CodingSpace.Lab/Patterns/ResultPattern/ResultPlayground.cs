@@ -1,5 +1,7 @@
 using System;
 
+namespace CodingSpace.Lab.Patterns.ResultPattern;
+
 public static class ResultPlayground
 {
     public static void Run()
@@ -187,7 +189,7 @@ public static class ResultPlayground
     {
         // Try to create invalid Result instances and see if the compiler stops you.
         // The following line will NOT compile, proving the pattern is safe:
-        var invalidResult = Result<User>.Success(new User("Bob"), "Some error");
+        // var invalidResult = Result<User>.Success(new User("Bob"), "Some error");
         // Only the allowed factory methods can be used:
         var validSuccess = Result<User>.Success(new User("Bob"));
         var validFailure = Result<User>.Failure("Some error");

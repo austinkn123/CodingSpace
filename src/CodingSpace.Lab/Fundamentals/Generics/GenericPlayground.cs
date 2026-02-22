@@ -1,3 +1,7 @@
+using System;
+
+namespace CodingSpace.Lab.Fundamentals.Generics;
+
 public static class GenericPlayground
 {
     public static void Run()

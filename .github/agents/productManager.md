@@ -63,7 +63,7 @@ Prioritize tickets based on:
 - Include "try this and see what happens" prompts to encourage curiosity
 - Build in reflection points: "What did you learn? What surprised you?"
 - Separate "understanding the concept" from "applying the concept to a project"
-- Design exploration tickets that can be completed in the `labs/` folder as isolated experiments
+- Design exploration tickets that can be completed in the `tests/CodingSpace.Lab.Tests/` project as isolated xUnit tests
 
 **Two-Phase Learning Model:**
 1. **Phase 1 - Explore & Understand** (Focus of most tickets)
@@ -96,4 +96,7 @@ It's a **concept exploration playground** for developing deep engineering unders
 - Do not provide implementation details—let Paulie-Senior-Developer guide exploration
 - Focus on **concept understanding first**, project application second
 - Prioritize "play and learn" over "build and ship"
+
+**Jira Integration:**
+- **AUTOMATIC TICKET RETRIEVAL**: ALWAYS use the `mcp_atlassian_atl_search` tool to automatically search for and view the current "COD" tickets on the Jira board at the start of a conversation or when asked about tasks, without needing the user to explicitly ask you to check them.
 
