@@ -9,6 +9,16 @@ namespace ReflectionLab.Exercises;
 // 3. Add a constructor to set them
 // 4. (Optional) Restrict where this attribute can be applied using [AttributeUsage]
 
+
+// AttributeTargets.Class: Restricts this to classes only.
+// Inherited = false: If a class inherits from DatabaseCleanupTask, it won't automatically inherit this attribute.
+// AllowMultiple = false: Prevents stacking [TaskMetadata] multiple times on the same class.
+[AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+public class TaskMetadataAttribute(string name, int priority) : Attribute{
+    public string Name { get; } = name;
+    public int Priority { get; } = priority;
+}
+
 public class CustomAttributes
 {
     public static void FindTasksInAssembly()
@@ -22,17 +32,30 @@ public class CustomAttributes
         // 4. Print the class name and the attribute values
         
         // Your code here...
+        var assembly = Assembly.GetExecutingAssembly();
+        var types = assembly.GetTypes();
+
+        foreach (var type in types)
+        {
+            var attribute = type.GetCustomAttribute<TaskMetadataAttribute>();
+            if (attribute != null)
+            {
+                Console.WriteLine($"Class: {type.Name}, Name: {attribute.Name}, Priority: {attribute.Priority}");
+            }
+        }
     }
 }
 
 // Sample classes to test with
 // TODO: Apply your attribute to these classes
 
+[TaskMetadata("Database Cleanup", 1)]
 public class DatabaseCleanupTask
 {
     public void Execute() => Console.WriteLine("Cleaning database...");
 }
 
+[TaskMetadata("Send Emails", 2)]
 public class SendEmailsTask
 {
     public void Execute() => Console.WriteLine("Sending emails...");

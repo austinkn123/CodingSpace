@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace ReflectionLab.Exercises;
@@ -6,24 +7,27 @@ namespace ReflectionLab.Exercises;
 public class TypeInspection
 {
     /// <summary>
-    /// Given any object, print all its properties and values
+    /// Given any object, return a dictionary of all its properties and values
     /// </summary>
-    public static void DumpObject(object obj)
+    public static Dictionary<string, object?> GetPropertyValues(object obj)
     {
+        var result = new Dictionary<string, object?>();
+
         if (obj == null)
         {
-            Console.WriteLine("Object is null");
-            return;
+            return result;
         }
 
-        // TODO: Implement reflection logic here
-        // 1. Get the type of the object
-        // 2. Get all properties of that type
-        // 3. Loop through properties and print their Name and Value
+        var type = obj.GetType();
+        var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.NonPublic);
+
+        foreach (var prop in properties)
+        {
+            var value = prop.GetValue(obj);
+            result.Add(prop.Name, value);
+        }
         
-        Console.WriteLine($"--- Dumping {obj.GetType().Name} ---");
-        
-        // Your code here...
+        return result;
     }
 }
 
