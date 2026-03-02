@@ -8,7 +8,7 @@ public class DynamicInstantiation
     /// <summary>
     /// Given a type name as a string, create an instance of that type
     /// </summary>
-    public static object? CreateInstance(string typeName)
+    public static object? CreateInstance(string typeName, params object[] args)
     {
         Console.WriteLine($"--- Creating instance of {typeName} ---");
         
@@ -17,9 +17,25 @@ public class DynamicInstantiation
         // 2. If type is null, handle it (throw or return null)
         // 3. Use Activator.CreateInstance to create the object
         // 4. Return the object
-        
-        // Your code here...
-        return null;
+
+        var type = Type.GetType(typeName);
+        if (type == null)
+        {
+            Console.WriteLine($"Type '{typeName}' not found.");
+            return null;
+        }
+
+        // If args is empty, we can use the overload that allows non-public
+        if (args.Length == 0)
+        {
+            // true = allows non-public constructors
+            return Activator.CreateInstance(type, nonPublic: true);
+        }
+        else
+        {
+            // For parameterized private constructors, it's much harder (requires detailed BindingFlags)
+            return Activator.CreateInstance(type, args);
+        }
     }
 }
 
