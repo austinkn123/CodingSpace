@@ -19,29 +19,41 @@ public class PluginSystem
     public static void RunAllPlugins()
     {
         Console.WriteLine("--- Running Plugins ---");
-        
+
         // TODO: Implement reflection logic here
         // 1. Get the current assembly
         // 2. Find all types that implement IPlugin (and are not interfaces/abstract classes)
         // 3. Instantiate each plugin
         // 4. Call Execute() on each plugin
-        
+
         // Your code here...
+
+        var assembly = Assembly.GetExecutingAssembly();
+        var pluginTypes = assembly.GetTypes()
+            .Where(t => typeof(IPlugin).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
+
+        foreach (var type in pluginTypes)
+        {
+            var plugin = (IPlugin)Activator.CreateInstance(type)!;
+            plugin.Execute();
+        }
+
+
     }
-}
 
-// Sample plugins to test with
-public class LoggerPlugin : IPlugin
-{
-    public void Execute() => Console.WriteLine("LoggerPlugin executing...");
-}
+    // Sample plugins to test with
+    public class LoggerPlugin : IPlugin
+    {
+        public void Execute() => Console.WriteLine("LoggerPlugin executing...");
+    }
 
-public class MetricsPlugin : IPlugin
-{
-    public void Execute() => Console.WriteLine("MetricsPlugin executing...");
-}
+    public class MetricsPlugin : IPlugin
+    {
+        public void Execute() => Console.WriteLine("MetricsPlugin executing...");
+    }
 
-public class SecurityPlugin : IPlugin
-{
-    public void Execute() => Console.WriteLine("SecurityPlugin executing...");
+    public class SecurityPlugin : IPlugin
+    {
+        public void Execute() => Console.WriteLine("SecurityPlugin executing...");
+    }
 }

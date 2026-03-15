@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingSpace.API", "src\Codi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingSpace.Lab", "src\CodingSpace.Lab\CodingSpace.Lab.csproj", "{3D9ABD26-2FE9-4983-B793-AA401599C50F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingSpace.Shared", "src\CodingSpace.Shared\CodingSpace.Shared.csproj", "{9CD4C721-2560-4E06-9A3E-766913654644}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingSpace.Lab.Tests", "tests\CodingSpace.Lab.Tests\CodingSpace.Lab.Tests.csproj", "{39E8A6B5-8181-40D3-AD66-C8FDEAC8256E}"

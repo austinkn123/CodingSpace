@@ -1,5 +1,7 @@
 using System;
+using System.IO;
 using Xunit;
+using ReflectionLab.Exercises;
 
 namespace CodingSpace.Lab.Tests.Fundamentals.Reflection;
 
@@ -9,13 +11,17 @@ public class PluginSystemTests
     public void PluginLoader_ShouldDiscoverAllPlugins()
     {
         // Arrange
-        
+        var output = new StringWriter();
+        Console.SetOut(output);
+
         // Act
-        
+        PluginSystem.RunAllPlugins();
+
         // Assert
-        // TODO: Write tests for the plugin loader
-        // 1. Define an IPlugin interface with Execute() method
-        // 2. Create 3 plugin classes in separate files
-        // 3. Write a "plugin loader" that discovers and runs all IPlugin implementations
+        var result = output.ToString();
+        Assert.Contains("--- Running Plugins ---", result);
+        Assert.Contains("LoggerPlugin executing...", result);
+        Assert.Contains("MetricsPlugin executing...", result);
+        Assert.Contains("SecurityPlugin executing...", result);
     }
 }
