@@ -115,18 +115,6 @@ public async Task RecordTransaction_ValidTransaction_SavesAndChecksbudget()
 - Transaction rollback patterns
 - Testing actual SQL/EF behavior
 
-## TDD Katas (Warm-Up Exercises)
-
-Before diving into the Budget Tracker, practice the cycle on small standalone problems:
-
-| Kata | Concept | Difficulty |
-|------|---------|-----------|
-| String Calculator | Parse and sum — basic Red-Green-Refactor | ⭐ |
-| FizzBuzz | Conditional logic with incremental tests | ⭐ |
-| Roman Numerals | Transformation logic, emergent design | ⭐⭐ |
-| Bowling Game | State tracking, complex rules | ⭐⭐⭐ |
-| Bank Account | Outside-in with mocks | ⭐⭐⭐ |
-
 ## Key Principles
 
 1. **Tests are specifications** — read them as documentation of behavior

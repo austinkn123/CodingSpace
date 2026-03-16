@@ -56,8 +56,7 @@ CodingSpace/
 ├── tests/
 │   ├── CodingSpace.Lab.Tests/             # Fundamentals tests
 │   ├── BudgetTracker.Engines.Tests/       # TDD Phase 1 (Classic)
-│   ├── BudgetTracker.Managers.Tests/      # TDD Phase 2 (London-school)
-│   └── CodingSpace.Katas/                # TDD practice exercises
+│   └── BudgetTracker.Managers.Tests/      # TDD Phase 2 (London-school)
 │
 ├── projects/                              # Future capstone projects
 └── client/                                # React frontend (future)
@@ -68,10 +67,9 @@ CodingSpace/
 ### Learning Path
 
 1. **Read the concepts**: [IDesign Method](docs/concepts/idesign-method.md) | [TDD Fundamentals](docs/concepts/tdd-fundamentals.md)
-2. **Warm up with TDD Katas**: Start with [String Calculator](tests/CodingSpace.Katas/README.md)
-3. **Build BudgetTracker via TDD**:
-   - Phase 1: Implement Engines using Classic TDD → [Engine Tests](tests/BudgetTracker.Engines.Tests/)
-   - Phase 2: Implement Managers using London-school TDD → [Manager Tests](tests/BudgetTracker.Managers.Tests/)
+2. **Build BudgetTracker via TDD**:
+   - Phase 1: Implement Engines using Classic TDD  [Engine Tests](tests/BudgetTracker.Engines.Tests/)
+   - Phase 2: Implement Managers using London-school TDD  [Manager Tests](tests/BudgetTracker.Managers.Tests/)
    - Phase 3: Implement Accessors with integration tests
 
 ### Run Tests

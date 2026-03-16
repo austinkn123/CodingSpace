@@ -38,9 +38,6 @@ src/BudgetTracker/
 - **Phase 2 (London-school TDD)**: Move to Managers — mock Engines and Accessors through contracts. Learn interaction-based testing.
 - **Phase 3 (Integration)**: Test Accessors with real databases. Learn test infrastructure.
 
-### 4. TDD Katas Project
-A dedicated test project with small, focused exercises for practicing the TDD cycle before applying it to the Budget Tracker.
-
 ## Consequences
 
 ### Benefits

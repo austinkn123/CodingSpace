@@ -288,7 +288,6 @@ Use questions to provoke thinking:
   - `BudgetTracker.Utilities` — Cross-cutting concerns (references only Contracts)
   - `BudgetTracker.Client.API` — ASP.NET Core entry point and DI composition root
 - **TDD Practice**: 
-  - `tests/CodingSpace.Katas/` — Standalone TDD warm-up exercises (String Calculator, FizzBuzz, etc.)
   - `tests/BudgetTracker.Engines.Tests/` — Classic TDD (Phase 1: pure logic, no mocks)
   - `tests/BudgetTracker.Managers.Tests/` — London-school TDD (Phase 2: mock via contracts)
 - **Tests**: Mirrored by layer. Engine tests use real objects. Manager tests use Moq.
