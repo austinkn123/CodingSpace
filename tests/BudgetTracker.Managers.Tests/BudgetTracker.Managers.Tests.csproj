@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>BudgetTracker.Managers.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <!-- 
+    TDD PHASE 2: London-School TDD
+    Tests reference Contracts (for interfaces/models) and Managers (for implementations).
+    Mock Engines and Accessors via Moq — their implementations are NOT referenced here.
+  -->
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BudgetTracker\BudgetTracker.Contracts\BudgetTracker.Contracts.csproj" />
+    <ProjectReference Include="..\..\src\BudgetTracker\BudgetTracker.Managers\BudgetTracker.Managers.csproj" />
+  </ItemGroup>
+
+</Project>

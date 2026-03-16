@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BudgetTracker.Managers</RootNamespace>
+  </PropertyGroup>
+
+  <!-- 
+    IDESIGN RULE: Managers reference ONLY Contracts.
+    Never add references to Engines or Accessors directly.
+    Managers orchestrate workflows by calling Engines and Accessors through their interfaces.
+    The Client.API wires the implementations via DI.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetTracker.Contracts\BudgetTracker.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

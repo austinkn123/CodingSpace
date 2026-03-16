@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BudgetTracker.Utilities</RootNamespace>
+  </PropertyGroup>
+
+  <!-- 
+    IDESIGN RULE: Utilities may reference Contracts or nothing.
+    Cross-cutting concerns: logging, caching, date providers, validation helpers.
+    Available to all layers but should not create coupling.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetTracker.Contracts\BudgetTracker.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

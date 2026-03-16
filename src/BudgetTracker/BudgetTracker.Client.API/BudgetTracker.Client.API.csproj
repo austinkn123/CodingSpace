@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BudgetTracker.Client.API</RootNamespace>
+  </PropertyGroup>
+
+  <!-- 
+    IDESIGN RULE: The Client (API) references Contracts for interface types,
+    AND references all implementation projects ONLY for DI registration.
+    Controllers should be thin: parse input → call Manager → return result.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetTracker.Contracts\BudgetTracker.Contracts.csproj" />
+    <ProjectReference Include="..\BudgetTracker.Managers\BudgetTracker.Managers.csproj" />
+    <ProjectReference Include="..\BudgetTracker.Engines\BudgetTracker.Engines.csproj" />
+    <ProjectReference Include="..\BudgetTracker.Accessors\BudgetTracker.Accessors.csproj" />
+    <ProjectReference Include="..\BudgetTracker.Utilities\BudgetTracker.Utilities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.5" />
+  </ItemGroup>
+
+</Project>

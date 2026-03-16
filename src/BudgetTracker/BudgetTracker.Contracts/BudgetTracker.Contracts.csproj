@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BudgetTracker.Contracts</RootNamespace>
+  </PropertyGroup>
+
+  <!-- 
+    IDESIGN RULE: Contracts has NO project references.
+    This is the foundation — all other layers reference only this project.
+    Contains: Interfaces, DTOs, Enums, shared types.
+  -->
+
+</Project>

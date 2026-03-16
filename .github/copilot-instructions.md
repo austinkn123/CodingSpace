@@ -279,12 +279,20 @@ Use questions to provoke thinking:
 **Testing**: Unit tests for business logic. Integration tests for data access. E2E for critical paths.
 
 **File Organization**: 
-- **Modular Monolith for Labs**: Use the `src/CodingSpace.Lab/` project for all concept exploration and sandbox exercises. Do NOT create a new `.csproj` for every ticket.
-- **Test-Driven Labs**: Use the `tests/CodingSpace.Lab.Tests/` project to run and verify lab exercises using xUnit.
-- **Concepts**: Group by learning topic (e.g., `Generics`, `Async`, `Middleware`) rather than layers
-- **Projects**: Separate folders for architectural demos (e.g., `CleanArch`, `VerticalSlice`)
-- **Flexible**: Structure follows the learning goal; no rigid enforcement of one architecture
-- **Tests**: Colocated or mirrored, depending on the module type
+- **Fundamentals Lab**: Use `src/CodingSpace.Lab/` for isolated C# concept exploration (Generics, Reflection, etc.)
+- **IDesign Architecture**: Use `src/BudgetTracker/` for the IDesign-structured project. Each layer is a separate `.csproj` with strict dependency rules:
+  - `BudgetTracker.Contracts` — Interfaces and DTOs (referenced by all layers)
+  - `BudgetTracker.Engines` — Pure business logic (references only Contracts)
+  - `BudgetTracker.Accessors` — Data access (references only Contracts)
+  - `BudgetTracker.Managers` — Workflow orchestration (references only Contracts)
+  - `BudgetTracker.Utilities` — Cross-cutting concerns (references only Contracts)
+  - `BudgetTracker.Client.API` — ASP.NET Core entry point and DI composition root
+- **TDD Practice**: 
+  - `tests/CodingSpace.Katas/` — Standalone TDD warm-up exercises (String Calculator, FizzBuzz, etc.)
+  - `tests/BudgetTracker.Engines.Tests/` — Classic TDD (Phase 1: pure logic, no mocks)
+  - `tests/BudgetTracker.Managers.Tests/` — London-school TDD (Phase 2: mock via contracts)
+- **Tests**: Mirrored by layer. Engine tests use real objects. Manager tests use Moq.
+- **IDesign Dependency Rule**: NEVER add a direct reference between Engines, Accessors, or Managers. Everything goes through Contracts (interfaces). The compiler enforces this via project references.
 
 ---
 

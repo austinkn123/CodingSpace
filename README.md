@@ -1,10 +1,16 @@
 # CodingSpace
 
-A **deliberate practice environment** for developing software engineering skills from intermediate to senior and architect levels. Learn by doing—master patterns, principles, and architectural thinking through hands-on implementation.
+A **deliberate practice environment** for mastering software architecture and engineering discipline. Learn by doing — master IDesign methodology, TDD, and architectural patterns through hands-on implementation.
 
 ## Mission
 
-Move beyond "making it work" to **"designing it right"**. Every exercise focuses on the *why* behind technical decisions, building intuition for real-world engineering challenges.
+Move beyond "making it work" to **"designing it right"**. Every exercise focuses on the *why* behind architectural decisions, building intuition for real-world engineering challenges.
+
+## Current Focus
+
+- **IDesign Method** — Volatility-based decomposition (Juval Löwy)
+- **TDD** — Progressive from Classic (Inside-Out) to London-school (Outside-In)
+- **Architecture Patterns** — Service boundaries, dependency rules, testable design
 
 ## AI Mentorship Ecosystem
 
@@ -12,16 +18,16 @@ Specialized AI mentors in [.github/agents/](.github/agents/) provide targeted gu
 
 | Agent | Role |
 |-------|------|
-| **Tony-Architect** | System design, architectural patterns, decision-making |
-| **Christopher-Product-Manager** | Learning roadmap, skill-building objectives, Jira tickets |
-| **Paulie-Senior-Developer** | Technical execution, clean code, .NET/React best practices |
+| **Tony-Architect** | System design, IDesign, architectural patterns |
+| **Christopher-Product-Manager** | Learning roadmap, skill-building objectives |
+| **Paulie-Senior-Developer** | Technical execution, clean code, .NET/React |
 | **Silvio-QA** | Testing strategies, TDD, quality engineering |
 | **Bobby-documentation-specialist** | README files and project documentation |
 
 ## Tech Stack
 
-- **Backend**: Latest .NET / ASP.NET Core Web API
-- **Frontend**: React + TypeScript + Vite
+- **Backend**: .NET 9 / ASP.NET Core Web API
+- **Architecture**: IDesign (Managers / Engines / Accessors / Utilities)
 - **Database**: Microsoft SQL Server, PostgreSQL
 - **ORM**: Dapper, Entity Framework Core, Raw SQL
 - **Testing**: xUnit, Moq (Backend) | Jest, React Testing Library (Frontend)
@@ -30,42 +36,57 @@ Specialized AI mentors in [.github/agents/](.github/agents/) provide targeted gu
 
 ```
 CodingSpace/
-├── docs/                          # Learning documentation
-│   ├── roadmap.md                 # Skill progression map
-│   ├── decisions/                 # Architecture Decision Records
-│   └── concepts/                  # Concept deep-dives
+├── docs/
+│   ├── concepts/                          # Deep-dives (IDesign, TDD)
+│   └── decisions/                         # Architecture Decision Records
 │
-├── labs/                          # Isolated learning exercises
-│   ├── 01-fundamentals/           # Generics, Async, LINQ
-│   ├── 02-patterns/               # Result, Repository, Factory
-│   ├── 03-architecture/           # DI, CQRS, Clean Architecture
-│   └── 04-advanced/               # Event-Driven, Distributed Systems
+├── src/
+│   ├── CodingSpace.Lab/                   # C# fundamentals playground
+│   │   ├── Fundamentals/                  #   Generics, Reflection
+│   │   └── Patterns/                      #   Result Pattern
+│   │
+│   └── BudgetTracker/                     # IDesign architecture project
+│       ├── BudgetTracker.Contracts/       #   Interfaces + DTOs
+│       ├── BudgetTracker.Engines/         #   Pure business logic
+│       ├── BudgetTracker.Accessors/       #   Data access
+│       ├── BudgetTracker.Managers/        #   Workflow orchestration
+│       ├── BudgetTracker.Utilities/       #   Cross-cutting concerns
+│       └── BudgetTracker.Client.API/      #   ASP.NET Core entry point
 │
-├── projects/                      # Capstone mini-projects
+├── tests/
+│   ├── CodingSpace.Lab.Tests/             # Fundamentals tests
+│   ├── BudgetTracker.Engines.Tests/       # TDD Phase 1 (Classic)
+│   ├── BudgetTracker.Managers.Tests/      # TDD Phase 2 (London-school)
+│   └── CodingSpace.Katas/                # TDD practice exercises
 │
-├── src/                           # Application code
-│   ├── CodingSpace.API/           # ASP.NET Core Web API
-│   └── CodingSpace.Lab/           # CLI playground for exercises
-│
-├── tests/                         # Automated tests
+├── projects/                              # Future capstone projects
+└── client/                                # React frontend (future)
 ```
 
 ## Getting Started
 
-### Run the API
+### Learning Path
+
+1. **Read the concepts**: [IDesign Method](docs/concepts/idesign-method.md) | [TDD Fundamentals](docs/concepts/tdd-fundamentals.md)
+2. **Warm up with TDD Katas**: Start with [String Calculator](tests/CodingSpace.Katas/README.md)
+3. **Build BudgetTracker via TDD**:
+   - Phase 1: Implement Engines using Classic TDD → [Engine Tests](tests/BudgetTracker.Engines.Tests/)
+   - Phase 2: Implement Managers using London-school TDD → [Manager Tests](tests/BudgetTracker.Managers.Tests/)
+   - Phase 3: Implement Accessors with integration tests
+
+### Run Tests
 ```bash
-cd src/CodingSpace.API
+dotnet test
+```
+
+### Run the Budget Tracker API (after implementation)
+```bash
+cd src/BudgetTracker/BudgetTracker.Client.API
 dotnet run
 ```
 
-### Run the Lab CLI
+### Fundamentals Lab (preserved)
 ```bash
 cd src/CodingSpace.Lab
 dotnet run
 ```
-
-### Start Learning
-1. Open [docs/roadmap.md](docs/roadmap.md)
-2. Navigate to your current topic in `labs/`
-3. Read the README, then implement the exercises
-4. Ask an AI mentor for review when done

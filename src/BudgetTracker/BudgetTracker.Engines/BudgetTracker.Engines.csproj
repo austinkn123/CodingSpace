@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BudgetTracker.Engines</RootNamespace>
+  </PropertyGroup>
+
+  <!-- 
+    IDESIGN RULE: Engines reference ONLY Contracts.
+    Never add references to Accessors, Managers, or Utilities.
+    Engines are pure business logic — stateless, no data access, no side effects.
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\BudgetTracker.Contracts\BudgetTracker.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
